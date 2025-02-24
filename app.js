@@ -1,47 +1,41 @@
-// Simulated private chat system with one sender and one receiver
-const sendButton = document.getElementById("sendButton");
-const messageInput = document.getElementById("messageInput");
-const chatBox = document.getElementById("chatBox");
-const logoutButton = document.getElementById("logoutButton");
+// Elements
+const sendButton = document.getElementById('sendButton');
+const messageInput = document.getElementById('messageInput');
+const chatBox = document.getElementById('chatBox');
 
-sendButton.addEventListener("click", sendMessage);
-messageInput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        sendMessage();
-    }
-});
-
+// Send message function
 function sendMessage() {
     const messageText = messageInput.value.trim();
     if (messageText) {
-        // Add the user's message
-        appendMessage(messageText, "user-message");
+        // Create the user's message element
+        const userMessage = document.createElement('div');
+        userMessage.classList.add('message', 'user-message');
+        userMessage.textContent = messageText;
+        chatBox.appendChild(userMessage);
 
-        // Simulate reply after a delay (to simulate a response from the other user)
+        // Scroll to the bottom of the chat box
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // Clear the input field after sending
+        messageInput.value = '';
+
+        // Simulate the other user replying after a short delay
         setTimeout(() => {
-            const replyText = "Reply from User2: " + messageText;
-            appendMessage(replyText, "reply-message");
+            const replyMessage = document.createElement('div');
+            replyMessage.classList.add('message', 'reply-message');
+            replyMessage.textContent = `Reply: ${messageText}`;
+            chatBox.appendChild(replyMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
         }, 1000);
-
-        // Clear input field after sending
-        messageInput.value = "";
-        messageInput.focus();
     }
 }
 
-function appendMessage(messageText, messageType) {
-    const messageDiv = document.createElement("div");
-    messageDiv.classList.add("message", messageType);
-    messageDiv.textContent = messageText;
+// Send message when clicking the send button
+sendButton.addEventListener('click', sendMessage);
 
-    chatBox.appendChild(messageDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;  // Scroll to the bottom
-}
-
-// Simulated logout function (just resets the chat)
-logoutButton.addEventListener("click", function() {
-    if (confirm("Are you sure you want to logout?")) {
-        chatBox.innerHTML = ""; // Clear chat messages
-        alert("You have logged out.");
+// Send message when pressing Enter key
+messageInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
     }
 });
