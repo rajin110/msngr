@@ -1,90 +1,73 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* style.css */
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.chat-container {
+#chat-container {
     width: 400px;
-    height: 500px;
+    height: 600px;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-.header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.chat-box {
+#chat-box {
     flex-grow: 1;
     padding: 20px;
-    background-color: #f8f8f8;
     overflow-y: auto;
+}
+
+#messages {
     display: flex;
     flex-direction: column;
 }
 
-.input-container {
-    display: flex;
-    padding: 10px;
-    background-color: #fff;
-    border-top: 1px solid #ccc;
+.message {
+    margin: 10px 0;
 }
 
-#messageInput {
-    width: 80%;
+.user-message {
+    text-align: right;
+}
+
+.bot-message {
+    text-align: left;
+    color: #007bff;
+}
+
+#input-container {
+    display: flex;
+    padding: 10px;
+}
+
+#user-input {
+    flex-grow: 1;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-#sendButton {
-    width: 15%;
+#send-btn {
+    padding: 10px 15px;
+    font-size: 16px;
     background-color: #007bff;
     color: white;
-    font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-#sendButton:hover {
+#send-btn:hover {
     background-color: #0056b3;
-}
-
-/* Message Styles */
-.message {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    max-width: 80%;
-}
-
-.user-message {
-    background-color: #dcf8c6;
-    margin-left: auto;
-}
-
-.reply-message {
-    background-color: #e0e0e0;
-    margin-right: auto;
 }
