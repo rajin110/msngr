@@ -51,6 +51,31 @@ const botResponses = {
     'what does "www" stand for?': 'WWW stands for World Wide Web.',
     'who invented the telephone?': 'Alexander Graham Bell is credited with inventing the telephone.',
     'what is the most popular social media platform in 2021?': 'As of 2021, Facebook is the most popular social media platform.',
+        // Bangladeshi GK in Bangla
+    'বাংলাদেশের জাতির পিতা কে?': 'বাংলাদেশের জাতির পিতা হলেন শেখ মুজিবুর রহমান।',
+    'বাংলাদেশের রাজধানী কোথায়?': 'বাংলাদেশের রাজধানী হল ঢাকা।',
+    'বাংলাদেশ কখন স্বাধীনতা লাভ করে?': 'বাংলাদেশ ২৬ মার্চ, ১৯৭১ সালে স্বাধীনতা লাভ করে।',
+    'বাংলাদেশের প্রথম রাষ্ট্রপতি কে ছিলেন?': 'বাংলাদেশের প্রথম রাষ্ট্রপতি ছিলেন শেখ মুজিবুর রহমান।',
+    'বাংলাদেশের প্রথম প্রধানমন্ত্রী কে ছিলেন?': 'বাংলাদেশের প্রথম প্রধানমন্ত্রী ছিলেন তাজউদ্দিন আহমদ।',
+    'বাংলাদেশের জাতীয় ভাষা কি?': 'বাংলাদেশের জাতীয় ভাষা হল বাংলা (বাংলা)।',
+    'বাংলাদেশের জাতীয় ফুল কি?': 'বাংলাদেশের জাতীয় ফুল হল শাপলা।',
+    'বাংলাদেশের জাতীয় পশু কি?': 'বাংলাদেশের জাতীয় পশু হল রয়েল বেঙ্গল টাইগার।',
+    'বাংলাদেশের "লাইফলাইন" কোন নদী?': 'বাংলাদেশের "লাইফলাইন" হল পদ্মা নদী।',
+    'বাংলাদেশের স্বাধীনতা যুদ্ধ কে জিতেছিল?': 'বাংলাদেশ স্বাধীনতা যুদ্ধ ১৯৭১ সালে ভারতীয় সেনাবাহিনীর সহায়তায় পাকিস্তানকে পরাজিত করে জিতেছিল।',
+    
+    // More Bangladeshi GK (Additional Questions in Bangla)
+    'বাংলাদেশের জাতীয় পতাকা কে ডিজাইন করেছিলেন?': 'বাংলাদেশের জাতীয় পতাকা ডিজাইন করেছিলেন কামরুল হাসান।',
+    'বাংলাদেশের জাতীয় সঙ্গীত কি?': 'বাংলাদেশের জাতীয় সঙ্গীত হল "আমার সোনার বাংলা" যা রচনা করেছিলেন রবীন্দ্রনাথ ঠাকুর।',
+    'বাংলাদেশের মুক্তিযুদ্ধের প্রথম শহীদ কে ছিলেন?': 'বাংলাদেশের মুক্তিযুদ্ধের প্রথম শহীদ হলেন রফিক উদ্দিন।',
+    'বাংলাদেশের মুক্তিযুদ্ধে কতজন মুক্তিযোদ্ধা শহীদ হন?': 'বাংলাদেশের মুক্তিযুদ্ধে আনুমানিক ৩০ লক্ষ মানুষের শহীদ হওয়ার তথ্য পাওয়া যায়।',
+    'বাংলাদেশের প্রধান খাদ্য কি?': 'বাংলাদেশের প্রধান খাদ্য হল ভাত এবং মাছ।',
+    
+    // Default response for unrecognized questions
+    'default': 'Sorry, I didn\'t understand that. Can you try again?'
+};
+
+// Synonym dictionary to help recognize similar questions
+
     
     // Default response for unrecognized questions
     'default': 'Sorry, I didn\'t understand that. Can you try again?'
@@ -64,7 +89,12 @@ const synonyms = {
     'first': ['first', 'initial'],
     'discover': ['discover', 'find', 'uncover', 'explore'],
     'world war 2': ['world war 2', 'ww2'],
-    'president of france': ['president of france', 'french president']
+    'bangladesh': ['bangladesh', 'bd'],
+    'father of the nation': ['father of the nation', 'nation\'s father', 'banga bandhu'],
+    'prime minister': ['prime minister', 'pm'],
+    'war': ['war', 'freedom', 'independence'],
+    'flower': ['flower', 'national flower'],
+    'animal': ['animal', 'national animal']
 };
 
 // Function to simulate a message
