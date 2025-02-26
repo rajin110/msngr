@@ -64,12 +64,13 @@ const botResponses = {
     'বাংলাদেশের "লাইফলাইন" কোন নদী?': 'বাংলাদেশের "লাইফলাইন" হল পদ্মা নদী।',
     'বাংলাদেশের স্বাধীনতা যুদ্ধ কে জিতেছিল?': 'বাংলাদেশ স্বাধীনতা যুদ্ধ ১৯৭১ সালে ভারতীয় সেনাবাহিনীর সহায়তায় পাকিস্তানকে পরাজিত করে জিতেছিল।',
     
-    // More Bangladeshi GK (Additional Questions in Bangla)
+    // Add more Bangladeshi GK questions and answers here (totaling to 150)
+
     'বাংলাদেশের জাতীয় পতাকা কে ডিজাইন করেছিলেন?': 'বাংলাদেশের জাতীয় পতাকা ডিজাইন করেছিলেন কামরুল হাসান।',
     'বাংলাদেশের জাতীয় সঙ্গীত কি?': 'বাংলাদেশের জাতীয় সঙ্গীত হল "আমার সোনার বাংলা" যা রচনা করেছিলেন রবীন্দ্রনাথ ঠাকুর।',
     'বাংলাদেশের মুক্তিযুদ্ধের প্রথম শহীদ কে ছিলেন?': 'বাংলাদেশের মুক্তিযুদ্ধের প্রথম শহীদ হলেন রফিক উদ্দিন।',
     'বাংলাদেশের মুক্তিযুদ্ধে কতজন মুক্তিযোদ্ধা শহীদ হন?': 'বাংলাদেশের মুক্তিযুদ্ধে আনুমানিক ৩০ লক্ষ মানুষের শহীদ হওয়ার তথ্য পাওয়া যায়।',
-    'বাংলাদেশের প্রধান খাদ্য কি?': 'বাংলাদেশের প্রধান খাদ্য হল ভাত এবং মাছ。',
+    'বাংলাদেশের প্রধান খাদ্য কি?': 'বাংলাদেশের প্রধান খাদ্য হল ভাত এবং মাছ।',
     
     // Default response for unrecognized questions
     'default': 'Sorry, I didn\'t understand that. Can you try again?'
@@ -88,8 +89,7 @@ const synonyms = {
     'prime minister': ['prime minister', 'pm'],
     'war': ['war', 'freedom', 'independence'],
     'flower': ['flower', 'national flower'],
-    'animal': ['animal', 'national animal'],
-    '?': ['']
+    'animal': ['animal', 'national animal']
 };
 
 // Function to simulate a message
