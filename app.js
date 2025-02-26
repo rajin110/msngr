@@ -88,7 +88,8 @@ const synonyms = {
     'prime minister': ['prime minister', 'pm'],
     'war': ['war', 'freedom', 'independence'],
     'flower': ['flower', 'national flower'],
-    'animal': ['animal', 'national animal']
+    'animal': ['animal', 'national animal'],
+    '?': ['']
 };
 
 // Function to simulate a message
