@@ -6,10 +6,10 @@ const messagesContainer = document.getElementById('messages');
 
 // Simulated bot responses
 const botResponses = {
-    "hello": "Hi! How can I assist you today?",
-    "how are you": "I'm doing great, thank you for asking!",
-    "bye": "Goodbye! Have a nice day!",
-    "tashrif": "Tashrif Rajin is the creator of me"
+    'hello': 'Hi! How can I assist you today?',
+    'how are you': 'Im doing great, thank you for asking!',
+    'bye': 'Goodbye! Have a nice day!',
+    'tashrif who?': 'Tashrif Rajin is the creator of me'
 };
 
 // Function to simulate a message
