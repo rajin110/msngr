@@ -10,7 +10,7 @@ const botResponses = {
     'how are you': 'Im doing great, thank you for asking!',
     'bye': 'Goodbye! Have a nice day!',
     'tashrif who?': 'Tashrif Rajin is the creator of me',
-    'Who is the creator of you?' : 'Tashrif Shahrear is the creator of me'
+    'Who is the creator of you?': 'Tashrif Shahrear is the creator of me'
 };
 
 // Function to simulate a message
