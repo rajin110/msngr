@@ -4,15 +4,15 @@ const sendButton = document.getElementById('send-btn');
 const userInput = document.getElementById('user-input');
 const messagesContainer = document.getElementById('messages');
 
-// Simulated bot responses
+// Simulated bot responses with GK info
 const botResponses = {
     'hello': 'Hi! How can I assist you today?',
-    'how are you': 'Im doing great, thank you for asking!',
+    'how are you': 'I\'m doing great, thank you for asking!',
     'bye': 'Goodbye! Have a nice day!',
-    'tashrif who?': 'Tashrif Rajin is the creator of me',
-    'who is the creator of you?': 'Tashrif Shahrear is the creator of me'
-        // History
-// History
+    'tashrif who?': 'Tashrif Rajin is the creator of me.',
+    'who is the creator of you?': 'Tashrif Shahrear is the creator of me.',
+    
+    // History
     'who was the first president of the united states?': 'George Washington was the first president of the United States.',
     'when did world war 2 end?': 'World War 2 ended on September 2, 1945.',
     'who discovered america?': 'Christopher Columbus is credited with discovering America in 1492.',
@@ -53,7 +53,7 @@ const botResponses = {
     'what is the most popular social media platform in 2021?': 'As of 2021, Facebook is the most popular social media platform.',
     
     // Default
-    'default': 'Sorry, I didnt understand that. Can you try again?'
+    'default': 'Sorry, I didn\'t understand that. Can you try again?'
 };
 
 // Function to simulate a message
@@ -68,7 +68,7 @@ function appendMessage(message, sender) {
 // Function to get bot response based on user input
 function getBotResponse(userMessage) {
     userMessage = userMessage.toLowerCase().trim();
-    return botResponses[userMessage] || botResponses["default"];
+    return botResponses[userMessage] || botResponses['default'];
 }
 
 // Function to handle user input and bot response
