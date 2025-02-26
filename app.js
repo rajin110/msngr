@@ -1,41 +1,58 @@
-// Elements
-const sendButton = document.getElementById('sendButton');
-const messageInput = document.getElementById('messageInput');
-const chatBox = document.getElementById('chatBox');
+// app.js
 
-// Send message function
-function sendMessage() {
-    const messageText = messageInput.value.trim();
-    if (messageText) {
-        // Create the user's message element
-        const userMessage = document.createElement('div');
-        userMessage.classList.add('message', 'user-message');
-        userMessage.textContent = messageText;
-        chatBox.appendChild(userMessage);
+const sendButton = document.getElementById('send-btn');
+const userInput = document.getElementById('user-input');
+const messagesContainer = document.getElementById('messages');
 
-        // Scroll to the bottom of the chat box
-        chatBox.scrollTop = chatBox.scrollHeight;
+// Simulated bot responses
+const botResponses = {
+    "hello": "Hi! How can I assist you today?",
+    "how are you": "I'm doing great, thank you for asking!",
+    "bye": "Goodbye! Have a nice day!",
+    "Who is Tashrif?": "Tashrif Rajin is the creator of me"
+};
 
-        // Clear the input field after sending
-        messageInput.value = '';
+// Function to simulate a message
+function appendMessage(message, sender) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+    messageElement.textContent = message;
+    messagesContainer.appendChild(messageElement);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+}
 
-        // Simulate the other user replying after a short delay
+// Function to get bot response based on user input
+function getBotResponse(userMessage) {
+    userMessage = userMessage.toLowerCase().trim();
+    return botResponses[userMessage] || botResponses["default"];
+}
+
+// Function to handle user input and bot response
+function handleUserInput() {
+    const userMessage = userInput.value;
+    if (userMessage.trim()) {
+        // Display user message
+        appendMessage(userMessage, 'user');
+
+        // Get bot response
+        const botMessage = getBotResponse(userMessage);
+        
+        // Display bot message
         setTimeout(() => {
-            const replyMessage = document.createElement('div');
-            replyMessage.classList.add('message', 'reply-message');
-            replyMessage.textContent = `Reply: ${messageText}`;
-            chatBox.appendChild(replyMessage);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }, 1000);
+            appendMessage(botMessage, 'bot');
+        }, 500);
+
+        // Clear input field
+        userInput.value = '';
     }
 }
 
-// Send message when clicking the send button
-sendButton.addEventListener('click', sendMessage);
+// Event listener for sending a message when the button is clicked
+sendButton.addEventListener('click', handleUserInput);
 
-// Send message when pressing Enter key
-messageInput.addEventListener('keypress', function(event) {
+// Event listener for sending a message when 'Enter' is pressed
+userInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        sendMessage();
+        handleUserInput();
     }
 });
