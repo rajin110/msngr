@@ -11,6 +11,49 @@ const botResponses = {
     'bye': 'Goodbye! Have a nice day!',
     'tashrif who?': 'Tashrif Rajin is the creator of me',
     'who is the creator of you?': 'Tashrif Shahrear is the creator of me'
+        // History
+// History
+    'who was the first president of the united states?': 'George Washington was the first president of the United States.',
+    'when did world war 2 end?': 'World War 2 ended on September 2, 1945.',
+    'who discovered america?': 'Christopher Columbus is credited with discovering America in 1492.',
+    
+    // Geography
+    'what is the capital of france?': 'The capital of France is Paris.',
+    'what is the largest country in the world?': 'Russia is the largest country in the world by land area.',
+    'which is the longest river in the world?': 'The Nile River is traditionally considered the longest river in the world.',
+    
+    // Science
+    'what is the chemical symbol for water?': 'The chemical symbol for water is H2O.',
+    'who developed the theory of relativity?': 'Albert Einstein developed the theory of relativity.',
+    'what is the speed of light?': 'The speed of light in a vacuum is approximately 299,792 kilometers per second.',
+    
+    // Famous Personalities
+    'who is the president of the united states?': 'As of 2021, Joe Biden is the president of the United States.',
+    'who is the founder of microsoft?': 'Bill Gates co-founded Microsoft.',
+    'who was the first woman to fly solo across the atlantic ocean?': 'Amelia Earhart was the first woman to fly solo across the Atlantic Ocean.',
+    
+    // Sports
+    'who won the fifa world cup in 2018?': 'France won the FIFA World Cup in 2018.',
+    'who holds the record for the most olympic gold medals?': 'Michael Phelps holds the record for the most Olympic gold medals with 23.',
+    'what sport is known as "the king of sports"?': 'Soccer (Football) is known as "the king of sports".',
+
+    // Literature
+    'who wrote "romeo and juliet"?': 'William Shakespeare wrote "Romeo and Juliet".',
+    'what is the longest novel ever written?': 'The longest novel ever written is "In Search of Lost Time" by Marcel Proust.',
+    'who is the author of "harry potter"?': 'J.K. Rowling is the author of the "Harry Potter" series.',
+    
+    // Space
+    'what is the nearest planet to the sun?': 'Mercury is the closest planet to the Sun.',
+    'how many moons does earth have?': 'Earth has one natural moon, known as "the Moon".',
+    'who was the first person to walk on the moon?': 'Neil Armstrong was the first person to walk on the Moon, on July 20, 1969.',
+    
+    // Technology
+    'what does "www" stand for?': 'WWW stands for World Wide Web.',
+    'who invented the telephone?': 'Alexander Graham Bell is credited with inventing the telephone.',
+    'what is the most popular social media platform in 2021?': 'As of 2021, Facebook is the most popular social media platform.',
+    
+    // Default
+    'default': 'Sorry, I didnt understand that. Can you try again?'
 };
 
 // Function to simulate a message
