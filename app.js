@@ -9,7 +9,7 @@ const botResponses = {
     "hello": "Hi! How can I assist you today?",
     "how are you": "I'm doing great, thank you for asking!",
     "bye": "Goodbye! Have a nice day!",
-    "Who is Tashrif?": "Tashrif Rajin is the creator of me"
+    "who is Tashrif": "Tashrif Rajin is the creator of me"
 };
 
 // Function to simulate a message
