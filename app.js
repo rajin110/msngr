@@ -56,28 +56,15 @@ const botResponses = {
     'default': 'Sorry, I didn\'t understand that. Can you try again?'
 };
 
-// Synonym handling function for similar questions
-const similarQuestions = {
-    'who is the president of the united states?': [
-        'who is the president of america?',
-        'who is the us president?',
-        'who is the president of usa?'
-    ],
-    'what is the capital of france?': [
-        'where is the capital of france?',
-        'paris is the capital of which country?',
-        'what is the capital city of france?'
-    ],
-    'who was the first president of the united states?': [
-        'who was america\'s first president?',
-        'who was the first president of america?'
-    ],
-    'who discovered america?': [
-        'who found america?',
-        'who is credited with discovering america?',
-        'who discovered the americas?'
-    ],
-    // Add more patterns for other responses
+// Synonym dictionary to help recognize similar questions
+const synonyms = {
+    'president': ['president', 'leader', 'chief'],
+    'united states': ['united states', 'usa', 'america', 'us'],
+    'capital': ['capital', 'city', 'headquarters'],
+    'first': ['first', 'initial'],
+    'discover': ['discover', 'find', 'uncover', 'explore'],
+    'world war 2': ['world war 2', 'ww2'],
+    'president of france': ['president of france', 'french president']
 };
 
 // Function to simulate a message
@@ -89,18 +76,18 @@ function appendMessage(message, sender) {
     messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
 }
 
-// Function to get bot response based on user input
+// Function to process user input and return appropriate response
 function getBotResponse(userMessage) {
     userMessage = userMessage.toLowerCase().trim();
-    
-    // Check if the user message matches any similar questions
-    for (const [key, variations] of Object.entries(similarQuestions)) {
-        if (variations.some(variant => userMessage.includes(variant))) {
+
+    // Check for keywords in user message using the synonyms dictionary
+    for (let key in synonyms) {
+        if (synonyms[key].some(synonym => userMessage.includes(synonym))) {
             return botResponses[key] || botResponses['default'];
         }
     }
 
-    // If no similar questions match, use the exact match approach
+    // If no keyword match, check exact match
     return botResponses[userMessage] || botResponses['default'];
 }
 
