@@ -51,7 +51,8 @@ const botResponses = {
     'what does "www" stand for?': 'WWW stands for World Wide Web.',
     'who invented the telephone?': 'Alexander Graham Bell is credited with inventing the telephone.',
     'what is the most popular social media platform in 2021?': 'As of 2021, Facebook is the most popular social media platform.',
-        // Bangladeshi GK in Bangla
+    
+    // Bangladeshi GK in Bangla
     'বাংলাদেশের জাতির পিতা কে?': 'বাংলাদেশের জাতির পিতা হলেন শেখ মুজিবুর রহমান।',
     'বাংলাদেশের রাজধানী কোথায়?': 'বাংলাদেশের রাজধানী হল ঢাকা।',
     'বাংলাদেশ কখন স্বাধীনতা লাভ করে?': 'বাংলাদেশ ২৬ মার্চ, ১৯৭১ সালে স্বাধীনতা লাভ করে।',
@@ -68,14 +69,7 @@ const botResponses = {
     'বাংলাদেশের জাতীয় সঙ্গীত কি?': 'বাংলাদেশের জাতীয় সঙ্গীত হল "আমার সোনার বাংলা" যা রচনা করেছিলেন রবীন্দ্রনাথ ঠাকুর।',
     'বাংলাদেশের মুক্তিযুদ্ধের প্রথম শহীদ কে ছিলেন?': 'বাংলাদেশের মুক্তিযুদ্ধের প্রথম শহীদ হলেন রফিক উদ্দিন।',
     'বাংলাদেশের মুক্তিযুদ্ধে কতজন মুক্তিযোদ্ধা শহীদ হন?': 'বাংলাদেশের মুক্তিযুদ্ধে আনুমানিক ৩০ লক্ষ মানুষের শহীদ হওয়ার তথ্য পাওয়া যায়।',
-    'বাংলাদেশের প্রধান খাদ্য কি?': 'বাংলাদেশের প্রধান খাদ্য হল ভাত এবং মাছ।',
-    
-    // Default response for unrecognized questions
-    'default': 'Sorry, I didn\'t understand that. Can you try again?'
-};
-
-// Synonym dictionary to help recognize similar questions
-
+    'বাংলাদেশের প্রধান খাদ্য কি?': 'বাংলাদেশের প্রধান খাদ্য হল ভাত এবং মাছ。',
     
     // Default response for unrecognized questions
     'default': 'Sorry, I didn\'t understand that. Can you try again?'
@@ -110,14 +104,14 @@ function appendMessage(message, sender) {
 function getBotResponse(userMessage) {
     userMessage = userMessage.toLowerCase().trim();
 
-    // Check for keywords in user message using the synonyms dictionary
+    // Check for synonyms in user message
     for (let key in synonyms) {
         if (synonyms[key].some(synonym => userMessage.includes(synonym))) {
             return botResponses[key] || botResponses['default'];
         }
     }
 
-    // If no keyword match, check exact match
+    // If no synonym match, check exact match
     return botResponses[userMessage] || botResponses['default'];
 }
 
