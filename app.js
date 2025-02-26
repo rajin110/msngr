@@ -52,8 +52,32 @@ const botResponses = {
     'who invented the telephone?': 'Alexander Graham Bell is credited with inventing the telephone.',
     'what is the most popular social media platform in 2021?': 'As of 2021, Facebook is the most popular social media platform.',
     
-    // Default
+    // Default response for unrecognized questions
     'default': 'Sorry, I didn\'t understand that. Can you try again?'
+};
+
+// Synonym handling function for similar questions
+const similarQuestions = {
+    'who is the president of the united states?': [
+        'who is the president of america?',
+        'who is the us president?',
+        'who is the president of usa?'
+    ],
+    'what is the capital of france?': [
+        'where is the capital of france?',
+        'paris is the capital of which country?',
+        'what is the capital city of france?'
+    ],
+    'who was the first president of the united states?': [
+        'who was america\'s first president?',
+        'who was the first president of america?'
+    ],
+    'who discovered america?': [
+        'who found america?',
+        'who is credited with discovering america?',
+        'who discovered the americas?'
+    ],
+    // Add more patterns for other responses
 };
 
 // Function to simulate a message
@@ -68,6 +92,15 @@ function appendMessage(message, sender) {
 // Function to get bot response based on user input
 function getBotResponse(userMessage) {
     userMessage = userMessage.toLowerCase().trim();
+    
+    // Check if the user message matches any similar questions
+    for (const [key, variations] of Object.entries(similarQuestions)) {
+        if (variations.some(variant => userMessage.includes(variant))) {
+            return botResponses[key] || botResponses['default'];
+        }
+    }
+
+    // If no similar questions match, use the exact match approach
     return botResponses[userMessage] || botResponses['default'];
 }
 
